@@ -4,8 +4,8 @@ const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const db = require("./models");
-const routesAPI = require("./routes/apiroutes");
-const routesHTML = require("./routes/htmlroutes");
+const routesAPI = require("./routes/apiroutes.js");
+const routesHTML = require("./routes/htmlroutes.js");
 
 // PORT
 const PORT = process.env.PORT || 3001;
@@ -34,13 +34,9 @@ mongoose.connect(
 
 const connected = mongoose.connected;
 
-app.use(require("./routes/apiroutes.js"));
-app.use(require("./routes/htmlroutes.js"));
-
-connected.on("Connected", () => {
-    console.log('Connected Successfully');
-});
+app.use(routesAPI);
+app.use(routesHTML);
 
 app.listen(PORT, () => {
     console.log(`Successfully running on ${PORT}`);
-})
+});

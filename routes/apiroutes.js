@@ -18,14 +18,14 @@ route.get("/api/workout", (req, res) => {
     });
 });
 
-route.post("/api/workout", ({ body }, res) => {
+route.post("/api/workouts", ({ body }, res) => {
     db.Workout.create({})
     .then((newWorkout) => {
         res.json(newWorkout);
     });
 });
 
-route.put("/api/workout/:id", (res, req) => {
+route.put("/api/workouts/:id", (res, req) => {
     db.Workout.findbyIdandUpdate(
         req.params.id,
         { $push: { exercises: req.body }},

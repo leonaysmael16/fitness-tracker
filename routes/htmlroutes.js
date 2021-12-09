@@ -13,3 +13,5 @@ route.get("/excercise", (_req, res) => {
 route.get("/stats", (req, res) => {
     res.sendFile(path.join(__dirname, "./public/stats.html"));
 });
+
+module.exports = route;
