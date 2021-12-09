@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const mongooseSchema = mongoose.mongooseSchema;
+const Schema = mongoose.Schema;
 
 // Schema. source: https://mongoosejs.com/docs/schematypes.html
 
@@ -48,6 +48,6 @@ const schemaWorkout = new Schema (
     }
 );
 
-const workout = mongoose.model("Workout", WorkoutSchema);
+const workout = mongoose.model("Workout", schemaWorkout);
 
 module.exports = workout;

@@ -1,5 +1,5 @@
 const workout = require('../models/workout');
-const db = require('./models');
+const db = require('../models');
 const route = require("express").Router();
 
 // Adding total duration of workout
