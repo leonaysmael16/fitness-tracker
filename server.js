@@ -11,5 +11,34 @@ const routesHTML = require("./routes/html-routes");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+app.use(logger("dev"));
+
+app.use(express.urlencoded({ extended: true }));
+
+app.use(express.json());
+
+app.use(express.static("public"));
+
+app.use(routesAPI);
+app.use(routesHTML);
 
 
+mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost/fitness-tracker',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false
+    }
+  );
+
+const connected = mongoose.connected;
+
+connected.on("Connected", () => {
+    console.log('Connected Successfully');
+});
+
+app.listen(PORT, () => {
+    console.log(`Successfully running on ${PORT}`);
+})
