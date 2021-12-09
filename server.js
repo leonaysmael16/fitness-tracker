@@ -35,7 +35,7 @@ mongoose.connect(
 const connected = mongoose.connected;
 
 app.use(require("./routes/apiroutes.js"));
-app.use(require("/routes/htmlroutes.js"));
+app.use(require("./routes/htmlroutes.js"));
 
 connected.on("Connected", () => {
     console.log('Connected Successfully');
