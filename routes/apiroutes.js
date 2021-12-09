@@ -25,5 +25,15 @@ route.post("/api/workout", ({ body }, res) => {
     });
 });
 
+route.put("/api/workout/:id", (res, req) => {
+    db.Workout.findbyIdandUpdate(
+        req.params.id,
+        { $push: { exercises: req.body }},
+        { new: true } 
+    )
+    .then((updateWorkout) => {
+        res.json(updateWorkout);
+    });
+});
 
 module.exports = route;
