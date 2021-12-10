@@ -18,7 +18,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
-
+app.use(routesAPI);
+app.use(routesHTML);
 
 
 
@@ -34,8 +35,7 @@ mongoose.connect(
 
 const connected = mongoose.connected;
 
-app.use(routesAPI);
-app.use(routesHTML);
+
 
 app.listen(PORT, () => {
     console.log(`Successfully running on ${PORT}`);

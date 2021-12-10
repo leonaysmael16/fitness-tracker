@@ -1,4 +1,4 @@
-const workout = require('../models/workout');
+const Workout = require('../models/workout');
 const db = require('../models');
 const route = require("express").Router();
 
@@ -17,6 +17,22 @@ route.get("/api/workout", (req, res) => {
         res.json(workout);
     });
 });
+
+route.get("/api/workouts/range", (req, res) => {
+    db.Workout.aggregate([
+        {
+            $addFields: {
+                totalDuration: { $sum: "$excercises:duration"},
+            },
+        },
+    ])
+    .sort({ _id: -1 })
+    .limit(10)
+    .then((stats) => {
+        res.json(stats);
+    })
+
+})
 
 route.post("/api/workouts", ({ body }, res) => {
     db.Workout.create({})
