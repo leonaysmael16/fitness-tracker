@@ -3,16 +3,16 @@ const db = require("../models");
 const fs = require("fs");
 const path = require("path");
 
-route.get("/", function(req, res)  {
+route.get("/", (req, res) =>  {
     res.sendFile(path.join(__dirname, "./public/index.html"));
 });
 
-route.get("/excercise", function(req, res){
+route.get("/excercise", (req, res) => {
     res.sendFile(path.join(__dirname, "./public/excercise.html"));
 
 });
 
-route.get("/stats", function(req, res) {
+route.get("/stats", (req, res) => {
     res.sendFile(path.join(__dirname, "./public/stats.html"));
 });
 

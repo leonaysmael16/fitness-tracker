@@ -3,7 +3,7 @@ const db = require('../models');
 const route = require("express").Router();
 
 // Adding total duration of workout
-route.get("/api/workout", (req, res) => {
+route.get("/api/workouts", (req, res) => {
     db.Workout.aggregate([
         {
             $addFields: {

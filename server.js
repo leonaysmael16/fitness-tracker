@@ -1,11 +1,11 @@
 // dependencies
 
-const express = require("express");
+const express = require('express');
 const logger = require("morgan");
 const mongoose = require("mongoose");
 const db = require("./models");
-const routesAPI = require("./routes/apiroutes.js");
-const routesHTML = require("./routes/htmlroutes.js");
+const dotenv = require('dotenv');
+
 
 // PORT
 const PORT = process.env.PORT || 3001;
@@ -18,13 +18,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static("public"));
-app.use(routesAPI);
-app.use(routesHTML);
+app.use(require("./routes/apiroutes.js"));
+app.use(require("./routes/htmlroutes.js"));
 
 
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/fitness-tracker',
+    process.env.MONGODB_URI || 'mongodb://localhost/workout',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -33,7 +33,7 @@ mongoose.connect(
     }
   );
 
-const connected = mongoose.connected;
+
 
 
 
