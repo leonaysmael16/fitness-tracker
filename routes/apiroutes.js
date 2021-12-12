@@ -4,7 +4,7 @@ const route = require("express").Router();
 
 // Adding total duration of workout
 route.get("/api/workouts", (req, res) => {
-    db.Workout.aggregate([
+    Workout.aggregate([
         {
             $addFields: {
                 durationTotal: {
@@ -19,7 +19,7 @@ route.get("/api/workouts", (req, res) => {
 });
 
 route.get("/api/workouts/range", (req, res) => {
-    db.Workout.aggregate([
+    Workout.aggregate([
         {
             $addFields: {
                 totalDuration: { $sum: "$excercises:duration"},
@@ -35,14 +35,14 @@ route.get("/api/workouts/range", (req, res) => {
 })
 
 route.post("/api/workouts", ({ body }, res) => {
-    db.Workout.create({})
+    Workout.create({})
     .then((newWorkout) => {
         res.json(newWorkout);
     });
 });
 
 route.put("/api/workouts/:id", (res, req) => {
-    db.Workout.findbyIdandUpdate(
+    Workout.findbyIdandUpdate(
         req.params.id,
         { $push: { exercises: req.body }},
         { new: true } 
