@@ -8,7 +8,7 @@ const dotenv = require('dotenv');
 
 
 // PORT
-const PORT = process.env.PORT || 3401;
+const PORT = process.env.PORT || 3501;
 const app = express();
 
 app.use(logger("dev"));
