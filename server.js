@@ -5,8 +5,8 @@ const logger = require("morgan");
 const mongoose = require("mongoose");
 const db = require("./models");
 const dotenv = require('dotenv');
-const apiRoutes = require('./routes/apiRoutes');
-const htmlRoutes = require('./routes/htmlRoutes')
+const apiRoutes = require('../routes/apiroutes');
+const htmlRoutes = require('../routes/htmlroutes')
 
 
 
