@@ -10,7 +10,7 @@ async function initWorkout() {
       date: formatDate(lastWorkout.day),
       totalDuration: lastWorkout.totalDuration,
       numExercises: lastWorkout.exercises.length,
-      ...tallyExercises(lastWorkout.excercises)
+      ...tallyExercises(lastWorkout.exercises)
     };
 
     renderWorkoutSummary(workoutSummary);
