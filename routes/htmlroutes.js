@@ -7,7 +7,7 @@ route.get("/", (req, res) =>  {
     res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
-route.get("/excercise", (req, res) => {
+route.get("/exercise", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/exercise.html"));
 
 });
