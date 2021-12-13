@@ -24,7 +24,7 @@ app.use(require("./routes/htmlroutes.js"));
 
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/workout',
+    process.env.MONGODB_URI || 'mongodb://localhost/workouts',
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
