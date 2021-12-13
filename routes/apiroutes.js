@@ -35,7 +35,7 @@ route.get("/api/workouts/range", (req, res) => {
 })
 
 route.post("/api/workouts", ({ body }, res) => {
-    Workout.create({})
+    Workout.create(body)
     .then((newWorkout) => {
         res.json(newWorkout);
     });
