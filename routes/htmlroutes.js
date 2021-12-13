@@ -8,7 +8,7 @@ route.get("/", (req, res) =>  {
 });
 
 route.get("/excercise", (req, res) => {
-    res.sendFile(path.join(__dirname, "./public/excercise.html"));
+    res.sendFile(path.join(__dirname, "./public/exercise.html"));
 
 });
 
