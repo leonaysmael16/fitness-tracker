@@ -9,6 +9,10 @@ weight, etc.
 ![Screen Shot 2021-12-08 at 11 52 21 PM](https://user-images.githubusercontent.com/84559394/145356175-da1d260b-1935-4a15-9b70-d4187ac204cf.png)
 ![Screen Shot 2021-12-08 at 11 52 49 PM](https://user-images.githubusercontent.com/84559394/145356189-c99e1eaf-0f76-4cf2-95f1-6edab3c4c80e.png)
 
+
+https://user-images.githubusercontent.com/84559394/145912687-f7ab92d8-8eb2-4ad6-adf5-8ee3b72507bd.mov
+
+
 # Tools Used
 
 - JavaScript
